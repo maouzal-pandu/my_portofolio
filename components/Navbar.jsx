@@ -4,18 +4,19 @@ import Link from "next/link";
 import { useState } from "react";
 
 const links = [
-  { href: "#about-me", label: "About Me" },
-  { href: "#tech-stack", label: "Tech Stack" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contacts", label: "Contact" },
+  { href: "#about-me", label: "about_me.tsx" },
+  { href: "#tech-stack", label: "tech_stack.tsx" },
+  { href: "#projects", label: "projects.tsx" },
+  { href: "#experience", label: "experience.tsx" },
+  { href: "#contacts", label: "contacts.tsx" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between md:justify-center py-5 px-2.5 bg-[#31363F]">
+    <nav className="flex items-center justify-between md:justify-center py-5 px-2.5 bg-transparent">
+      {/* navbar */}
       <div className="hidden md:flex flex gap-6 font-rubik">
         {links.map((link) => (
           <Link
@@ -56,8 +57,9 @@ export default function Navbar() {
         />
       )}
 
+      {/* drawer */}
       <div
-        className={`fixed top-0 right-0 w-64 h-full bg-[#31363F] z-50 transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 w-64 h-full bg-radial-glow z-50 transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex justify-end p-4">
           <button
@@ -78,16 +80,22 @@ export default function Navbar() {
           </button>
         </div>
         <div className="flex flex-col">
-          {links.map((link, index) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`py-2.5 px-3.5 hover:translate-x-2.5 transition-transform duration-300`}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+          <span className="font-bold font-cascadia-code px-3.5">
+            my_portfolio
+          </span>
+
+          <div className="relative ml-3.5 mt-3 border-l-3 border-[#55ead4] flex flex-col">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="relative flex items-center py-2.5 pl-5 pr-3.5 font-cascadia-code before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-0.5 before:bg-[#55ead4]"
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
