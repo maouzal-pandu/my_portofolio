@@ -6,6 +6,8 @@
 
   --bg: #15141f;
   --bg-glow: #1e1b2e;
+
+  --nav-h: 48px; /* ukur tinggi navbar asli di devtools, sesuaikan */
 }
 
 @theme inline {
@@ -18,6 +20,8 @@
   --font-cascadia-code: var(--font-cascadia-code);
   --font-rubik: var(--font-rubik);
   --font-neue-machina: var(--font-neue-machina);
+  --font-space-grostek: var(--font-space-grostek);
+  --font-jet-brains-mono: var(--font-jet-brains-mono);
 }
 
 @theme {
@@ -30,6 +34,26 @@
     opacity: 1;
   }
   50% {
+    opacity: 0;
+  }
+}
+
+@keyframes reveal-clip {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+@keyframes reveal-cursor {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: 100%;
     opacity: 0;
   }
 }

@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cascadia_Code, Rubik } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Cascadia_Code,
+  Rubik,
+  Space_Grotesk,
+  JetBrains_Mono,
+} from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -28,6 +35,16 @@ const neueMachina = localFont({
   variable: "--font-neue-machina",
 });
 
+const spaceGrostek = Space_Grotesk({
+  variable: "--font-space-grostek",
+  subsets: ["latin"],
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jet-brains-mono",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Maouzal Portfolio",
   // description: "Portofolio orang sigma",
@@ -42,7 +59,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${cascadiaCode.variable} ${neueMachina.variable}
-      ${rubik.variable} h-full antialiased`}
+      ${rubik.variable} ${spaceGrostek.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

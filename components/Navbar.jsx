@@ -4,18 +4,19 @@ import Link from "next/link";
 import { useState } from "react";
 
 const links = [
-  { href: "#about-me", label: "about_me.tsx" },
-  { href: "#tech-stack", label: "tech_stack.tsx" },
-  { href: "#projects", label: "projects.tsx" },
-  { href: "#experience", label: "experience.tsx" },
-  { href: "#contacts", label: "contacts.tsx" },
+  { href: "#about-me", label: "About Me" },
+  { href: "#tech-stack", label: "Tech Stack" },
+  { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
+  { href: "#contacts", label: "Contacts" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between md:justify-center py-5 px-2.5 bg-transparent">
+    <nav className="flex items-center justify-between md:justify-center py-3 px-2.5 bg-transparent">
+      {" "}
       {/* navbar */}
       <div className="hidden md:flex flex gap-6 font-rubik">
         {links.map((link) => (
@@ -28,12 +29,10 @@ export default function Navbar() {
           </Link>
         ))}
       </div>
-
       <span className="font-bold font-neue-machina md:hidden">
         <span className="text-[#55ead4]">&gt;</span>maouzal-portfolio
         <span className="text-[#55ead4] animate-blink">_</span>
       </span>
-
       <button
         onClick={() => setOpen(true)}
         className="md:hidden flex ml-auto hover:cursor-pointer"
@@ -49,14 +48,12 @@ export default function Navbar() {
           <path d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
-
       {open && (
         <div
           className="fixed inset-0 z-40 bg-black/50"
           onClick={() => setOpen(false)}
         />
       )}
-
       {/* drawer */}
       <div
         className={`fixed top-0 right-0 w-64 h-full bg-radial-glow z-50 transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
@@ -80,18 +77,17 @@ export default function Navbar() {
           </button>
         </div>
         <div className="flex flex-col">
-          <span className="font-bold font-cascadia-code px-3.5">
-            my_portfolio
-          </span>
-
-          <div className="relative ml-3.5 mt-3 border-l-3 border-[#55ead4] flex flex-col">
+          <div className="relative ml-3.5 mt-3 flex flex-col">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative flex items-center py-2.5 pl-5 pr-3.5 font-cascadia-code before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-0.5 before:bg-[#55ead4]"
+                className="group relative flex items-center py-2.5 pl-5 pr-3.5 font-rubik hover:translate-x-2.5 transition transition-transform duration-300"
                 onClick={() => setOpen(false)}
               >
+                <span className="group-hover:flex hidden mr-1 font-jet-brains-mono text-[#55ead4]">
+                  &gt;
+                </span>
                 {link.label}
               </Link>
             ))}
