@@ -43,7 +43,7 @@ export default function AboutMe() {
     <section
       ref={sectionRef}
       id="about-me"
-      className="scroll-mt-24 mx-5 py-24 md:py-32 border-t border-[#2C2939]"
+      className="scroll-mt-24 mx-5 py-24 md:py-32"
     >
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-14 items-center">
         {/* photo card */}

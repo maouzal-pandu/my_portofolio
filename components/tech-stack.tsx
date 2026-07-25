@@ -68,7 +68,7 @@ export default function TechStack() {
     <section
       ref={sectionRef}
       id="tech-stack"
-      className="scroll-mt-24 mx-5 py-24 md:py-32 border-t border-[#2C2939]"
+      className="scroll-mt-24 mx-5 py-24 md:py-32"
     >
       <div className="max-w-5xl mx-auto flex flex-col items-center md:items-start">
         <span
