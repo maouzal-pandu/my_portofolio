@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import AboutMe from "@/components/about-me";
 import TechStack from "@/components/tech-stack";
+import Projects from "@/components/projects";
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
       <AboutMe />
 
       <TechStack />
+
+      <Projects />
     </div>
   );
 }
