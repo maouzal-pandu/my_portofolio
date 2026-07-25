@@ -21,7 +21,7 @@ const TABS = [
     id: "about",
     label: "about.js",
     lines: [
-      [S("// hai, selamat datang 👋", "muted")],
+      [S("// Hello there, welcome 👋", "muted")],
       [S("const "), S("developer", "prop"), S(" = {")],
       [
         S("  name", "prop"),
@@ -122,7 +122,7 @@ const TABS = [
     id: "contact",
     label: "contact.js",
     lines: [
-      [S("// mari terhubung", "muted")],
+      [S("// let's connect", "muted")],
       [S("const "), S("contact", "prop"), S(" = {")],
       [
         S("  email", "prop"),
@@ -313,8 +313,8 @@ export default function Hero() {
         </p>
 
         <p className="text-[#726D89] text-center md:text-left mb-5 max-w-[420px] text-[15px] leading-[1.7]">
-          Ngoding dari backend sampai UI. Suka bikin sesuatu yang nyata dipakai
-          orang — bukan cuma nangkring di repo.
+          A passionate developer who loves to improve, and always looking for
+          new challenges errday.
         </p>
 
         {/* button */}
